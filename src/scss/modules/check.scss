@@ -1,0 +1,86 @@
+@use "sass:math";
+
+$checkBorderColor: #000;
+$checkSize: 20px;
+$checkBackground: #aaa;
+$checkBackgroundChecked: #f35429;
+$checkBackgroundHover: #ffc0af;
+$checkBackgroundDisabled: #ddd;
+$checkBackgroundDisabledText: #b8b8b8;
+$checkMargin: 10px;
+$checkLeft: math.div($checkSize , 2) - math.div($checkMargin , 2);
+$checkTop: math.div($checkSize , 2) ;
+
+.custom-checkbox-item {
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+.custom-checkbox {
+   position: absolute; // take it out of document flow
+   opacity: 0; // hide it
+  // text
+   & + label {
+     position: relative;
+     cursor: pointer;
+     padding: 0;
+     display: flex;
+     align-items: center;
+   }
+ 
+   // Box
+   & + label:before {
+     content: '';
+     margin-right: $checkMargin;
+     width: $checkSize;
+     height: $checkSize;
+     background: $checkBackground;
+     border: solid 1px $checkBorderColor;
+   }
+ 
+   // Box hover
+   &:hover + label:before {
+     background: $checkBackgroundHover;
+   }
+   
+   // Box focus
+   &:focus + label:before {
+     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+   }
+ 
+   // Box checked
+   &:checked + label:before {
+     background: $checkBackgroundChecked;
+   }
+   
+   // Disabled state label.
+   &:disabled + label {
+     color: $checkBackgroundDisabledText;
+     cursor: auto;
+   }
+ 
+   // Disabled box.
+   &:disabled + label:before {
+     box-shadow: none;
+     background: $checkBackgroundDisabled;
+   }
+ 
+   // Checkmark. Could be replaced with an image
+   &:checked + label:after {
+     content: '';
+     position: absolute;
+     left: $checkLeft;
+     top:  $checkTop;
+     background: white;
+     width: 2px;
+     height: 2px;
+     box-shadow: 
+       2px 0 0 white,
+       4px 0 0 white,
+       4px -2px 0 white,
+       4px -4px 0 white,
+       4px -6px 0 white,
+       4px -8px 0 white;
+     transform: rotate(45deg);
+   }
+ }

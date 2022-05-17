@@ -1,0 +1,20 @@
+.tabs__panel {
+   display: none;
+}
+.tabs__panel--active {
+   display: block;
+}
+.tabs__nav-btn--active {
+   background-color:lightgray;
+}
+.tabs__nav-btn {
+   cursor: pointer;
+}
+.tabs__nav-btn:focus {
+   background-color: dodgerblue;
+   color: white;
+}
+.tabs__nav {
+   display: flex;
+   list-style-type: none;
+}

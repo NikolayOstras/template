@@ -1,0 +1,67 @@
+<div class="cart">
+   <div class="cart__button-box">
+      <button class="cart__button">КОРЗИНА</button>
+      <span class="cart__button-quantity">0</span>
+   </div>
+   <ul class="cart__list">
+   </ul>
+   <p class="cart__total-price">Общая цена: <span>0</span> UAH</p>
+   <a href="#" class="cart__order-link">Заказать</a>
+</div>
+<article class="card">
+   <h2 class="card__name">Elf bar 1500</h2>
+   <p class="card__description">vape</p>
+   <div class="card__image">
+      <img src="assets/img/elf.jpg" alt="elf">
+   </div>
+   <p class="card__price">Цена: <span>200</span> UAH</p>
+   <div class="card__quantity">
+      <button class="card__quantity-plus">+</button>
+      <input type="text" readonly name="quantity" id="" class="card__quantity-counter" value="0">
+      <button class="card__quantity-minus">-</button>
+   </div>
+   <div class="card__order"></div>
+   <div class="card__alavibility">Есть в наличии</div>
+   <button class="card__add-button">Добавить в корзину</button>
+</article>
+<article class="card">
+   <h2 class="card__name">Elf bar 1000</h2>
+   <p class="card__description">vape</p>
+   <div class="card__image">
+      <img src="assets/img/elf.jpg" alt="elf">
+   </div>
+   <p class="card__price">Цена: <span>130.56</span> UAH</p>
+   <div class="card__quantity">
+      <button class="card__quantity-plus">+</button>
+      <input type="text" readonly name="quantity" id="" class="card__quantity-counter" value="0">
+      <button class="card__quantity-minus">-</button>
+   </div>
+   <div class="card__order"></div>
+   <div class="card__alavibility">Есть в наличии</div>
+   <button class="card__add-button">Добавить в корзину</button>
+</article>
+<!-- css file - scss/modules/cart.scss -->
+<!-- func.customStepper() // custom stepper -->
+<!-- func.cart() //shop cart -->
+
+<!-- function to send  order , and show modal with thanks -->
+<!-- document.querySelector('.form--modal').addEventListener(('submit') , (e) => {
+   let formData = new FormData(e.target);
+   let orders = func.orderArray.length
+   if (orders > 0) {
+      func.addOrder(formData , func.orderArray)
+      func.send(formData , 'php/telegram.php')
+      e.target.reset()
+      orderModal.closeModalFromOut()
+      thankModal.openModalFromOut()
+      func.clearCart()
+      
+   }
+   else(console.log('Add order please'))
+
+}) -->
+
+<!-- const Modal = new func.modal('#modal' , '.modal-link')
+const orderModal = new func.modal('#orderForm' , '.cart__order-link')
+const thankModal = new func.modal('#modalThanks' , 'none')
+ -->

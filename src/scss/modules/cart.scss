@@ -1,0 +1,18 @@
+.cart--active .cart__button{
+   color: skyblue;
+   cursor: pointer;
+}
+.card__image img {
+   width: 100px;
+   height: 100px;
+}
+.cart__product-image img{
+   width: 50px;
+   height: 50px;
+}
+.cart__order-link {
+   display: none;
+}
+.cart--active .cart__order-link {
+   display: block;
+}

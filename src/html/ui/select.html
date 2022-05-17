@@ -1,0 +1,25 @@
+<!-- кастомный селект -->
+<div class="dropdown">
+   <button class="dropdown__button">ALL</button>
+   <ul class="dropdown__list">
+      <li class="dropdown__list-item" data-value="all">ALL</li>
+      <li class="dropdown__list-item" data-value="1">1</li>
+      <li class="dropdown__list-item" data-value="2">2</li>
+      <li class="dropdown__list-item" data-value="3">3</li>
+   </ul>
+   <input type="text" name="select-category" value="" class="dropdown__input--hidden">
+   <div class="dropdown__filter">
+      <ul>
+         <li filter="1">1</li>
+         <li filter="2">2</li>
+         <li filter="2">2</li>
+         <li filter="3">3</li>
+         <li filter="2">2</li>
+         <li filter="1">1</li>
+      </ul>
+   </div>
+</div>
+
+<!-- func.select('.dropdown' , true) //custom select.true if need filter function -->
+<!-- filter value and data-value must be the same -->
+<!-- css file - scss/modules/select.scss -->

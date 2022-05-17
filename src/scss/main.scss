@@ -1,0 +1,13 @@
+// Global import
+@import './system/vars';
+@import './global';
+@import './system/mixins';
+// Modules import
+@import './modules/modules';
+// common (bem blocks etc)
+@import 'common';
+// import fonts
+@import './system/fonts';
+// sections scss
+@import './parts/header';
+

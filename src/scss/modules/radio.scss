@@ -1,0 +1,69 @@
+@use "sass:math";
+$radioDiameter: 20px;
+$radioInnerDiameter: 10px;
+$radioCenter: math.div(($radioDiameter - $radioInnerDiameter) , 2);
+$radioBorder: #dddddd;
+$radioInnerColor: #000;
+.options {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	// .options__item
+	&__item {
+		position: relative;
+		cursor: pointer;
+		&:not(:last-child) {
+			margin-bottom: em(5);
+		}
+	}
+	// .options__input
+	&__input {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+		&:focus + .options__label:before {
+			box-shadow: 0 0 5px #000;
+		}
+		&:checked + .options__label:before {
+		}
+		&:checked + .options__label:after {
+			transform: scale(1);
+		}
+	}
+	// .options__label
+	&__label {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+		gap: 1em;
+        // outer dot
+		&:before {
+			content: "";
+			align-self: flex-start;
+			width: $radioDiameter;
+			height: $radioDiameter;
+			flex: 0 0 $radioDiameter;
+			border-radius: 50%;
+			border: 1px solid $radioBorder;
+		}
+        // inner dot
+		&:after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			transform: scale(0);
+			width: $radioInnerDiameter;
+			height: $radioInnerDiameter;
+			border-radius: 50%;
+			background-color: $radioInnerColor;
+			position: absolute;
+			left: $radioCenter;
+			top: $radioCenter;
+		}
+	}
+	// .options__text
+	&__text {
+        font-size: 20px;
+        margin-top: -0.4em;
+	}
+}

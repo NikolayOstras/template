@@ -1,0 +1,124 @@
+//-----burger-----//
+.burger {
+  width: 100px;
+  height: 100px;
+  display: none;
+  position: relative;
+  background-color: $cola;
+  cursor: pointer;
+
+  @media (max-width: $md) {
+    display: block;
+  }
+}
+
+.bar {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 11px);
+
+  height: 2px;
+  width: 22px;
+  background-color: $colm;
+  display: block;
+  content: "";
+  transition: 0.3s ease;
+
+  &:first-child {
+    transform: translateY(-4px);
+  }
+
+  &:last-child {
+    transform: translateY(4px);
+  }
+}
+
+.active .bar {
+  &:first-child {
+    transform: rotateZ(-45deg);
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:last-child {
+    transform: translateY(0px) rotateZ(45deg);
+  }
+}
+
+//---------------//
+
+.nav {
+  transition: 0.3s ease;
+
+  @media (max-width: $md) {
+    display: none;
+  }
+
+  & ul {
+    padding: 0 em(22);
+    display: flex;
+
+  }
+
+  & li {
+    list-style: none;
+    padding: em(12) 0;
+    margin-right: em(50);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & a {
+      color: $colb;
+      font-size: 20px;
+      text-decoration: none;
+      font-family: $fm;
+    }
+
+    & a:hover {
+      font-weight: bold;
+      color: $cola;
+    }
+
+  }
+}
+
+.nav.active {
+  display: block;
+  margin: 0;
+}
+
+.nav.active ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  & li {
+    margin: 0;
+  }
+}
+
+header {
+  background-color: $colm;
+}
+
+header > .menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 0px em(10);
+  //position: fixed;
+  //top: 0;
+  transition: top 0.3s;
+
+  @media (max-width: $md) {
+    align-items: flex-start;
+  }
+}
+body {
+  min-height: 200vh;
+}

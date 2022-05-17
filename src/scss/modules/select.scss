@@ -1,0 +1,81 @@
+.dropdown {
+	position: relative;
+
+	&__button {
+		position: relative;
+		display: block;
+		width: 100%;
+		text-align: left;
+		background-color: #fff;
+		border: 1px solid #000;
+		border-radius: 4px;
+		height: em(46);
+		padding: em(10) em(40) em(10) em(20);
+		cursor: pointer;
+		position: relative;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px #777777;
+		}
+
+		&--active {
+			outline: none;
+			box-shadow: 0 0 0 2px #777777;
+		}
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: em(15);
+			display: block;
+			content: '';
+			pointer-events: none;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10.4px 6px 0 6px;
+			border-color: #555555 transparent transparent transparent;
+			pointer-events: none;
+		}
+	}
+	&__list {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: em(50);
+		background-color: #fff;
+		box-shadow: 0 2px 4px #777777;
+		overflow: hidden;
+		border-radius: 4px;
+		width: 100%;
+		z-index: 1;
+	
+		&-item {
+			border: 1px solid #000;
+			padding: em(13) em(20);
+			border-bottom: 0;
+			cursor: pointer;
+	
+			&:hover {
+				background-color: #dddddd;
+			}
+	
+			&:first-child {
+				border-radius: 4px 4px 0 0;
+			}
+	
+			&:last-child {
+				border-radius: 0 0 4px 4px;
+				border-bottom: 1px solid #000;
+			}
+		}
+		&--visible {
+			display: block;
+		}
+	}
+	&__input--hidden {
+		display: none;
+	}
+}
